@@ -198,7 +198,7 @@ language_list = list(languages.values())
 
 root = Tk()
 
-img=PhotoImage(file='C:\\Users\\HP\\Desktop\\Translator\\translator.png')
+img=PhotoImage(file='C:\\Users\\HP\\Translator\\translator.png')
 root.iconphoto(False,img)
 
 # Calculate screen width and height
@@ -291,5 +291,5 @@ switch_languages_button.grid(row=1, column=1,pady=0)
 
 image_label = Label(root, bg="#34495e")
 image_label.grid(row=3, column=0, columnspan=10, pady=20)
-
+#hossam
 root.mainloop()
