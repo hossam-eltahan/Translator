@@ -287,14 +287,7 @@ toggle_button.grid(row=5, column=3, pady=0,sticky="es")
 
 switch_languages_button = Button(root, text="🔄", command=switch_languages, font=("Helvetica", 14, "bold"), bg="#7AC5CD", fg="#000000")
 switch_languages_button.grid(row=1, column=1,pady=0)  
-switch_languages_button = Button(root, text="🔄", command=switch_languages, font=("Helvetica", 14, "bold"), bg="#7AC5CD", fg="#000000")
-switch_languages_button.grid(row=1, column=1,pady=0)  
-
-
 
 image_label = Label(root, bg="#34495e")
 image_label.grid(row=3, column=0, columnspan=10, pady=20)
-#hossam
-#hossam
-#hossam
 root.mainloop()
