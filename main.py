@@ -12,6 +12,8 @@ from tkinter import font
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from textblob import TextBlob
+import distutils
+
 
 
 
@@ -48,14 +50,15 @@ def on_translate_click():
             if value == translated_combo.get():
                 to_language_key = key
 
-        words = textblob.TextBlob(original_content)
+        # Use googletrans for translation
+        translated_words = googletrans.Translator().translate(original_content, src=from_language_key, dest=to_language_key)
 
-        translated_words = words.translate(from_lang=from_language_key, to=to_language_key)
-
-        translated_text.insert("1.0", translated_words)
+        # Insert the translated text into the translated_text widget
+        translated_text.insert("1.0", translated_words.text)
 
     except Exception as e:
         messagebox.showerror("Translator", e)
+
 
 def play_sound():
     speak_text(translated_text.get("1.0", "end-1c").strip())
@@ -288,6 +291,8 @@ toggle_button.grid(row=5, column=3, pady=0,sticky="es")
 switch_languages_button = Button(root, text="🔄", command=switch_languages, font=("Helvetica", 14, "bold"), bg="#7AC5CD", fg="#000000")
 switch_languages_button.grid(row=1, column=1,pady=0)  
 
+
 image_label = Label(root, bg="#34495e")
 image_label.grid(row=3, column=0, columnspan=10, pady=20)
+
 root.mainloop()
